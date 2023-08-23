@@ -34,10 +34,10 @@ Creer un volume persistant:
                 - "API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
                 - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
             volumes:
-                - glpict_data:/app
+                - data:/app
             image: 'glpict-docker:1.0'
     volumes:
-        glpict_data:
+        data:
 
 
 Lancer le container depuis le dossier avec la commade suivante:
