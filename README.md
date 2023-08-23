@@ -24,7 +24,7 @@ Creer un volume persistant:
 
 ### Docker compose
 
-Éditez le fichier docker-compose:
+Éditez le fichier docker-compose.yml:
 
     version: '3.3'
     services:
