@@ -2,7 +2,9 @@ version: '3.3'
 services:
     glpict-docker:
         environment:
-            - API_URL=""               # URL de l'API
-            - API_TOKEN=""             # Token de l'API
-            - SEUIL_ALERT="80"         # Seuil d'alerte en % avant de déclancher l'email
+            - GLPI_URL="http://localhost/glpi"               # URL de GLPI
+            - API_TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
+            - SEUIL_ALERT="80"                               # Seuil d'alerte en % avant de déclancher l'email
+        volumes:
+            - ./data:/app
         image: 'glpict-docker:1.0'

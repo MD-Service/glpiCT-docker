@@ -7,4 +7,4 @@ cd /app/glpiCT
 source .venv/bin/activate
 
 # Éxécution du script avec les variable d'environement
-python3 main.py -u $API_URL -t $API_TOKEN -s $SEUIL_ALERT
+python3 main.py -u $GLPI_URL -t $API_TOKEN -s $SEUIL_ALERT
