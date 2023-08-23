@@ -2,7 +2,7 @@
 
 ## Construire une image
 
-Cloner ce repo aisi que le sous repos [glpiCT](https://github.com/MD-Service/glpiCT) avec la commande suivante:
+Cloner ce repo ainsi que le sous repos [glpiCT](https://github.com/MD-Service/glpiCT) avec la commande suivante:
 
     git clone --recurse-submodules -j8 git@github.com:MD-Service/glpiCT-docker.git 
 
