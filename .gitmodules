@@ -1,0 +1,3 @@
+[submodule "glpiCT"]
+	path = glpiCT
+	url = git@github.com:MD-Service/glpiCT.git
