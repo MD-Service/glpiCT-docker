@@ -30,12 +30,14 @@ Creer un volume persistant:
     services:
         glpict-docker:
             environment:
-                - GLPI_URL="http://localhost/glpi"               # URL de GLPI
-                - API_TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
-                - SEUIL_ALERT="80"                               # Seuil d'alerte en % avant de déclancher l'email
+                - "GLPI_URL=http://localhost/glpi"               # URL de GLPI
+                - "API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
+                - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
             volumes:
-                - ./data:/app
+                - glpict_data:/app
             image: 'glpict-docker:1.0'
+    volumes:
+        glpict_data:
 
 
 Lancer le container depuis le dossier avec la commade suivante:
