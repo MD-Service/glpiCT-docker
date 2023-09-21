@@ -9,7 +9,7 @@ Cloner ce repo ainsi que le sous repos [glpiCT](https://github.com/MD-Service/gl
 ## Construire l'image
 
 Éxécuter le script build.sh avec des privilèges administrateur:
-
+    cd glpiCT-docker
     ./build.sh
 
 ## Utilisation
@@ -20,7 +20,7 @@ Creer un volume persistant:
 
     docker volume create glpict_data
 
-    docker run --rm -v glpict_data:/app --env GLPI_URL=http://domain.tld/glpi --env API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --env SEUIL_ALERT=80 --env SERVEUR_PORT=25 --env SERVEUR_SMTP=domain.tld glpict-docker:1.0
+    docker run --rm -v glpict_data:/app --env GLPI_URL=http://domain.tld/glpi --env API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --env SEUIL_ALERT=80 --env SERVEUR_PORT=25 --env SERVEUR_SMTP=domain.tld --env EMAIL_DEST=mail@example.com glpict-docker:1.0
 
 ### Docker compose
 
@@ -34,7 +34,8 @@ Creer un volume persistant:
                 - "API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
                 - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
                 - "SERVEUR_PORT=domain.tld"                      # Port du serveur email
-	            - "SERVEUR_SMTP=25"                              # Adresse du serveur email
+                - "SERVEUR_SMTP=25"                              # Adresse du serveur email
+                - "EMAIL_DEST=mail@example.com"                  # Adresse email de destination
             volumes:
                 - data:/app
             image: 'glpict-docker:1.0'
