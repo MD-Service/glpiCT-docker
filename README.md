@@ -8,7 +8,7 @@ Creer un volume persistant:
 
     docker volume create glpict_data
 
-    docker run --rm -v glpict_data:/app --env GLPI_URL=http://domain.tld/glpi --env API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --env SEUIL_ALERT=80 --env SERVEUR_PORT=25 --env SERVEUR_SMTP=domain.tld --env EMAIL_DEST=mail@example.com ghcr.io/md-service/glpict-docker:latest
+    docker run --rm -v glpict_data:/app --env GLPI_URL=http://domain.tld/glpi --env API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --env SEUIL_ALERT=80 --env SERVEUR_PORT=25 --env SERVEUR_SMTP=domain.tld --env EMAIL_DEST=mail@example.com --ADMIN_EMAIL=mail@example.com  ghcr.io/md-service/glpict-docker:latest
 
 ### Docker compose
 
@@ -24,6 +24,7 @@ Creer un volume persistant:
                 - "SERVEUR_PORT=domain.tld"                      # Port du serveur email
                 - "SERVEUR_SMTP=25"                              # Adresse du serveur email
                 - "EMAIL_DEST=mail@example.com"                  # Adresse email de destination
+                - "ADMIN_EMAIL=mail@example.com"                 # Adresse email de l'admin
             volumes:
                 - data:/app
             image: 'ghcr.io/md-service/glpict-docker:latest'
