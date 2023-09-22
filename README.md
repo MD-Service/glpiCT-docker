@@ -39,10 +39,12 @@ Lancer le container depuis le dossier avec la commade suivante:
 
 1. Cloner ce repo ainsi que le sous repos [glpiCT](https://github.com/MD-Service/glpiCT) avec la commande suivante:
 
-    git clone --recurse-submodules -j8 git@github.com:MD-Service/glpiCT-docker.git 
 
-2. Éxécuter le script build.sh avec des privilèges administrateur:
-    cd glpiCT-docker
-    ./build.sh
+       git clone --recurse-submodules -j8 git@github.com:MD-Service/glpiCT-docker.git 
 
-3. Lancer le conteneur comme dans les exemples ci-dessus. 
+3. Éxécuter le script build.sh avec des privilèges administrateur:
+
+       cd glpiCT-docker
+       ./build.sh
+
+5. Lancer le conteneur comme dans les exemples ci-dessus. 
