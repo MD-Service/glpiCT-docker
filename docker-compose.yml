@@ -8,6 +8,7 @@ services:
             - "SERVEUR_PORT=domain.tld"                      # Port du serveur email
             - "SERVEUR_SMTP=25"                              # Adresse du serveur email
             - "EMAIL_DEST=mail@example.com"                  # Adresse email de destination
+            - "ADMIN_EMAIL=mail@example.com"                 # Adesse email de l'administrateur pour le debug
         volumes:
             - data:/app
         image: 'ghcr.io/md-service/glpict-docker:latest'
