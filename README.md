@@ -8,7 +8,7 @@ Creer un volume persistant:
 
     docker volume create glpict_data
 
-    docker run --rm -v glpict_data:/app --env GLPI_URL=http://domain.tld/glpi --env API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --env SEUIL_ALERT=80 --env SERVEUR_PORT=25 --env SERVEUR_SMTP=domain.tld --env EMAIL_DEST=mail@example.com --env ADMIN_EMAIL=mail@example.com ghcr.io/md-service/glpict-docker:latest
+    docker run --rm -v glpict_data:/app --env GLPI_URL=http://domain.tld/glpi --env API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX --env SEUIL_ALERT=80 --env SERVEUR_PORT=25 --env SERVEUR_SMTP=domain.tld --env EMAIL_DEST=mail@example.com --env ADMIN_EMAIL=mail@example.com --env ADMIN_FROM_EMAIL=mail@example.com ghcr.io/md-service/glpict-docker:latest
 
 ### Docker compose
 
@@ -23,7 +23,8 @@ Creer un volume persistant:
                 - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
                 - "SERVEUR_PORT=domain.tld"                      # Port du serveur email
                 - "SERVEUR_SMTP=25"                              # Adresse du serveur email
-                - "ADMIN_EMAIL=mail@example.com"                 # Adesse email de l'administrateur pour le debug
+                - "ADMIN_EMAIL=mail@example.com"                 # Adresse email de l'administrateur pour le debug
+                - "ADMIN_FROM_EMAIL=mail@example.com"            # Adresse email de l'administrateur qui envoit l'alerte lors d'erreurs
             volumes:
                 - data:/app
             image: 'ghcr.io/md-service/glpict-docker:latest'

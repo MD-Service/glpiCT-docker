@@ -5,7 +5,7 @@ FROM debian:12.1
 ENV DEBIAN_FRONTEND noninteractive
 
 # Création du dossier de travail
-RUN mkdir -p /app/glpiCT
+RUN mkdir -p /app
 
 # Copie de l'application dans le dossier de travail
 COPY glpiCT /app/glpiCT
