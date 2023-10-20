@@ -21,8 +21,8 @@ Creer un volume persistant:
                 - "GLPI_URL=http://domain.tld/glpi"              # URL de GLPI
                 - "API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
                 - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
-                - "SERVEUR_PORT=domain.tld"                      # Port du serveur email
-                - "SERVEUR_SMTP=25"                              # Adresse du serveur email
+                - "SERVEUR_PORT=25"                              # Port du serveur email
+                - "SERVEUR_SMTP=domain.tld"                      # Adresse du serveur email
                 - "ADMIN_EMAIL=mail@example.com"                 # Adresse email de l'administrateur pour le debug
                 - "ADMIN_FROM_EMAIL=mail@example.com"            # Adresse email de l'administrateur qui envoit l'alerte lors d'erreurs
             volumes:
