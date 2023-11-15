@@ -10,6 +10,8 @@ services:
             - "EMAIL_DEST=mail@example.com"                  # Adresse email de destination
             - "ADMIN_EMAIL=mail@example.com"                 # Adesse email de l'administrateur pour le debug
             - "ADMIN_FROM_EMAIL=mail@example.com"            # Adresse email de l'administrateur qui envoit l'alerte lors d'erreurs
+            # Paramètres optionnels
+            # - "VERBOSE=true"                                        # Ative le mode verbose
         volumes:
             - data:/app
         image: 'ghcr.io/md-service/glpict-docker:latest'
