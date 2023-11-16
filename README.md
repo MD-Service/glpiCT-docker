@@ -14,23 +14,31 @@ Creer un volume persistant:
 
 Éditez le fichier docker-compose.yml:
 
-    version: '3.3'
-    services:
-        glpict-docker:
-            environment:
-                - "GLPI_URL=http://domain.tld/glpi"              # URL de GLPI
-                - "API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
-                - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
-                - "SERVEUR_PORT=25"                              # Port du serveur email
-                - "SERVEUR_SMTP=domain.tld"                      # Adresse du serveur email
-                - "ADMIN_EMAIL=mail@example.com"                 # Adresse email de l'administrateur pour le debug
-                - "ADMIN_FROM_EMAIL=mail@example.com"            # Adresse email de l'administrateur qui envoit l'alerte lors d'erreurs
-            volumes:
-                - data:/app
-            image: 'ghcr.io/md-service/glpict-docker:latest'
-    volumes:
-        data:
+```bash
+version: '3.3'
+services:
+    glpict-docker:
+        environment:
+            - "GLPI_URL=http://domain.tld/glpi"              # URL de GLPI
+            - "API_TOKEN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"    # Token de l'API
+            - "SEUIL_ALERT=80"                               # Seuil d'alerte en % avant de déclancher l'email
+            - "SERVEUR_PORT=25"                              # Port du serveur email
+            - "SERVEUR_SMTP=domain.tld"                      # Adresse du serveur email
+            - "EMAIL_DEST=mail@example.com"                  # Adresse email de destination
+            - "ADMIN_EMAIL=mail@example.com"                 # Adesse email de l'administrateur pour le debug
+            - "ADMIN_FROM_EMAIL=mail@example.com"            # Adresse email de l'administrateur qui envoit l'alerte lors d'erreurs
+            # Paramètres optionnels
+            # - "VERBOSE=true"                                        # Ative le mode verbose
+        volumes:
+            - "data:/app"
+            #Timezone volume
+            - "/etc/timezone:/etc/timezone:ro"
+            - "/etc/localtime:/etc/localtime:ro"
+        image: 'ghcr.io/md-service/glpict-docker:latest'
+volumes:
+    data:
 
+```
 
 Lancer le container depuis le dossier avec la commade suivante:
 
@@ -48,4 +56,4 @@ Lancer le container depuis le dossier avec la commade suivante:
        cd glpiCT-docker
        ./build.sh
 
-5. Lancer le conteneur comme dans les exemples ci-dessus. 
+5. Lancer le conteneur comme dans les exemples ci-dessus avec comme nom d'image **glpict-docker:local**
